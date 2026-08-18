@@ -5,7 +5,8 @@ from mediapipe.tasks.python import vision
 import numpy as np
 from pathlib import Path
 
-
+# This code is taken from mediapipe documentation. 
+# This is required because mediapipe accepts the file path of hand landmarker model.
 model_path = Path(__file__).parent / "hand_landmarker.task"
 
 BaseOptions = mp.tasks.BaseOptions
@@ -21,7 +22,9 @@ options = HandLandmarkerOptions(base_options=BaseOptions(model_asset_path = str(
                                 min_tracking_confidence=0.5)
 
 
-# Opening the webcamera
+# Opening the webcamera.
+# Rightnow, python is controlling the camera because the fast api is not implemented. 
+# This will be removed once we figure out how to communicate with text.js
 
 cap = cv2.VideoCapture(0)
 
@@ -75,7 +78,7 @@ with HandLandmarker.create_from_options(options) as landmarker:
         
         # Displays the camera 
         cv2.imshow("MediaPipe Hand Detection", frame)
-        # Allows to quit ("q")
+        # Allows to quit ("q") or just use ctrl + c to quit
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
