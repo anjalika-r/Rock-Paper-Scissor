@@ -1,5 +1,6 @@
 import { HandLandmarker, FilesetResolver } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest";
-
+// To start- run python -m http.server 5500  because python starts a tiny local webserver. 
+// http://localhost:5500   paste this on the browser.  
 
 let handLandmarker = null;
 let videoTime = -1;
@@ -52,3 +53,5 @@ export function handDetection(camera) {
 
     
 }
+
+
