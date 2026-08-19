@@ -26,5 +26,24 @@ python handdetection.py
 ``` 
 - It will start the camera and you will be able to see a wireframe on your hand. 
 
-But make sure you are in the correct directory everytime you run these commands. 
+But make sure you are in the correct directory everytime you run these commands.
+
+Also, JS cannot import or directly call getHandSign.py because JS runs in the browser and python runs as backend, a separate process. 
+- We need a small python api between them: JS detects the 21 landmarks, it sends the landmarks to python as JSON, python passes them to getHandSign(), it returns the classification to JS. 
+
+- getHandSign() expects an object with a .points property, so the request should use this structure: 
+
+```bash
+{
+  "points": [
+    { "x": 0.4, "y": 0.7, "z": -0.02 }
+  ]
+}
+```
+
+
+
+
+
+
 
