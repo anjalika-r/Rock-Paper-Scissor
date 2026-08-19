@@ -10,7 +10,7 @@ Python starts a tiny local server.
 ```bash 
 http://localhost:5500/frontend/SignSense/
 ``` 
-This will open start the camera and you can see the hand landmarks printed in the console.
+This will start the camera and you can see the hand landmarks printed in the console.
 
 
 ## Python mediapipe
