@@ -18,13 +18,8 @@ async function startDetection() {
             console.log("Hand detected successfully.");
             console.log(landmarks);
         }
-
         requestAnimationFrame(detectionLoop);
-
     }
-
     detectionLoop();
 }
-
-
 startDetection();
