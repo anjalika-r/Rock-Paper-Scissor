@@ -6,11 +6,38 @@
 <link rel="stylesheet" href="SignSenseGDG.css">
 </head>
 <body>
-    <h1>SignSense</h1>
-    <video id = "camera" autoplay playsinline>
-    </video>
-    <p id="sign-output">Loading camera...</p>
-<script type="module" src="text.js"></script>
+    <div class="game-container">
+        <h1>SignSense</h1>
+        
+        <div class="scoreboard">
+            <div class="score-card">
+                <span class="score-label">You</span>
+                <span id="user-score" class="score-value">0</span>
+            </div>
+            <div class="score-card">
+                <span class="score-label">Bot</span>
+                <span id="bot-score" class="score-value">0</span>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <video id="camera" autoplay playsinline></video>
+            <div id="countdown" class="countdown-overlay hidden">3</div>
+        </div>
+
+        <div class="game-status-panel">
+            <p id="sign-output" class="status-text">Loading camera...</p>
+            <p id="game-instruction" class="instruction-text">Show Thumbs-Up to Start!</p>
+            <div id="game-results" class="results-display hidden">
+                <div class="result-moves">
+                    <span id="user-move">Your Move: -</span>
+                    <span id="bot-move">Bot Move: -</span>
+                </div>
+                <div id="winner-announcement" class="winner-text"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="text.js"></script>
 </body>
 </html>
 

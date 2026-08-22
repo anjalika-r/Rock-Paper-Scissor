@@ -17,7 +17,7 @@ export async function handDetectionSetup() {
     handLandmarker = await HandLandmarker.createFromOptions(vision, 
         {
             baseOptions: {
-                modelAssetPath: "../detection_model/hand_landmarker.task"
+                modelAssetPath: "detection_model/hand_landmarker.task"
             },
 
             runningMode: "VIDEO", numHands: 1, minHandDetectionConfidence: 0.5,
