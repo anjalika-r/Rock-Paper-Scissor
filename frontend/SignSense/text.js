@@ -92,13 +92,8 @@ async function startDetection() {
 
             classifyLandmarks(landmarks);
         }
-
         requestAnimationFrame(detectionLoop);
-
     }
-
     detectionLoop();
 }
-
-
 startDetection();

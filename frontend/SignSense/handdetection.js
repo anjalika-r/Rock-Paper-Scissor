@@ -32,21 +32,21 @@ export async function handDetectionSetup() {
  */
 
 export function handDetection(camera) {
+    // if handLandmarker does not exist or data for the current frame is not ready
     if ((!handLandmarker) || (camera.readyState < 2)) {
         return null;
     }
-
+    // If the current video timestamp is the same as the timestamp we processed previously,
+    //  this is still the same frame. Do not run MediaPipe again.
     if (camera.currentTime == videoTime) {
         return null;
     }
-
     videoTime = camera.currentTime;
-
     const results = handLandmarker.detectForVideo(camera, performance.now());
     if (results.landmarks.length == 0) {
         return null;
     }
-
+    // an array of 21 points
     return results.landmarks[0];
 
 
